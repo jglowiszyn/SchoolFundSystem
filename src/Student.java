@@ -30,4 +30,27 @@ public class Student {
     public int getGrade() {
         return grade;
     }
+
+    public void payFees(int fees) {
+        feesPaid += fees;
+        School.updateTotalMoneyEarned(feesPaid);
+    }
+
+    public int getFeesPaid() {
+        return feesPaid;
+    }
+
+    public int getFeesTotal() {
+        return feesTotal;
+    }
+
+    public int getRemainingFees(){
+        return feesTotal - feesPaid;
+    }
+
+    @Override
+    public String toString() {
+        return "Student's Name  : " +name+  " " +
+                "Total Fees paid till now Rs." + feesPaid;
+    }
 }
